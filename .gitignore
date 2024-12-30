@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Additional
+crashreport
+.bak
+.swp
+Thumbs.db
+Rock of Ages.sln
+Assembly-CSharp.csproj
