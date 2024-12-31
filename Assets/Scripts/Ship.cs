@@ -10,14 +10,11 @@ public class Ship : MonoBehaviour
 
     const float RotateDegreesPerSecond = 180.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        radiousShip = GetComponent<CircleCollider2D>().radius;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float rotate = Input.GetAxis("Rotate");
@@ -47,21 +44,5 @@ public class Ship : MonoBehaviour
         {
             rb.AddForce(thrustDirection * ThrustForce, ForceMode2D.Force);
         }
-    }
-
-    private void OnBecameInvisible()
-    {
-        Vector2 position = transform.position;
-
-        if (position.x - radiousShip > ScreenUtils.ScreenRight || position.x + radiousShip < ScreenUtils.ScreenLeft)
-        {
-            position.x *= -1;
-        }
-        if (position.y - radiousShip > ScreenUtils.ScreenTop || position.y + radiousShip < ScreenUtils.ScreenBottom)
-        {
-            position.y *= -1;
-        }
-
-        transform.position = position;
     }
 }
